@@ -1,0 +1,114 @@
+/* ==========================================================================
+   ASHANTI ROASTERS — DESIGN TOKENS
+   Grown in soil. Roasted with intent.
+   ========================================================================== */
+
+:root {
+
+  /* ---- Color: Core Palette ---- */
+  --color-espresso:      #2A1810;  /* primary dark — text, nav bg */
+  --color-char:          #1A1008;  /* deepest shadow — borders, overlays */
+  --color-parchment:     #F0E6D2;  /* primary light bg */
+  --color-cream:         #F7F1E3;  /* lighter tint — cards, alt sections */
+  --color-amber:         #C87941;  /* accent — CTAs, stamps, links */
+  --color-amber-deep:    #A8622F;  /* amber hover/active state */
+  --color-faded-ink:     #6B5744;  /* muted secondary text on parchment */
+  --color-faded-ink-lt:  #B8A98C;  /* muted secondary text on espresso */
+
+  /* ---- Color: Semantic ---- */
+  --bg-primary:          var(--color-parchment);
+  --bg-inverse:          var(--color-espresso);
+  --bg-card:             var(--color-cream);
+  --text-primary:        var(--color-espresso);
+  --text-inverse:        var(--color-parchment);
+  --text-muted:          var(--color-faded-ink);
+  --text-muted-inverse:  var(--color-faded-ink-lt);
+  --accent:              var(--color-amber);
+  --accent-active:       var(--color-amber-deep);
+  --border-hairline:     rgba(42, 24, 16, 0.15);
+  --border-hairline-inv: rgba(240, 230, 210, 0.18);
+  --overlay-scrim:       rgba(26, 16, 8, 0.55);
+
+  /* ---- Type: Font Families ---- */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body:    "Work Sans", -apple-system, sans-serif;
+  --font-mono:    "JetBrains Mono", "Courier New", monospace;
+
+  /* ---- Type: Scale (mobile-first, fluid via clamp) ---- */
+  --fs-xs:    0.75rem;   /* 12px — captions, stamp text */
+  --fs-sm:    0.875rem;  /* 14px — small body, labels */
+  --fs-base:  1rem;      /* 16px — body copy */
+  --fs-md:    1.125rem;  /* 18px — lead paragraphs */
+  --fs-lg:    clamp(1.375rem, 4vw, 1.75rem);   /* card titles */
+  --fs-xl:    clamp(1.75rem, 6vw, 2.5rem);     /* section titles */
+  --fs-2xl:   clamp(2.5rem, 9vw, 4rem);        /* hero sub */
+  --fs-3xl:   clamp(3rem, 13vw, 6.5rem);       /* hero headline */
+
+  /* ---- Type: Weights ---- */
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+  --fw-bold:    700;
+  --fw-black:   900;
+
+  /* ---- Type: Line Height & Tracking ---- */
+  --lh-tight:   1.05;
+  --lh-snug:    1.25;
+  --lh-normal:  1.55;
+  --lh-relaxed: 1.75;
+  --ls-tight:   -0.02em;
+  --ls-normal:  0;
+  --ls-wide:    0.04em;
+  --ls-wider:   0.12em;  /* eyebrow labels, mono stamps */
+
+  /* ---- Spacing (8px base unit) ---- */
+  --space-1:  0.5rem;   /* 8px */
+  --space-2:  1rem;     /* 16px */
+  --space-3:  1.5rem;   /* 24px */
+  --space-4:  2rem;     /* 32px */
+  --space-5:  3rem;     /* 48px */
+  --space-6:  4rem;     /* 64px */
+  --space-7:  6rem;     /* 96px */
+  --space-8:  8rem;     /* 128px */
+
+  /* ---- Layout ---- */
+  --content-max:   1200px;
+  --content-pad:   1.25rem;    /* mobile side padding */
+  --content-pad-lg:3rem;       /* desktop side padding */
+  --radius-sm:     4px;
+  --radius-md:     8px;
+  --nav-height:    64px;
+
+  /* ---- Border / Rule Weights ---- */
+  --rule-hairline: 1px;
+  --rule-thick:    2px;
+
+  /* ---- Motion: Easing ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-soft:  cubic-bezier(0.7, 0, 0.84, 0);
+
+  /* ---- Motion: Duration ---- */
+  --dur-fast:   200ms;
+  --dur-base:   400ms;
+  --dur-slow:   700ms;
+  --dur-slower: 1200ms;
+
+  /* ---- Z-Index Scale ---- */
+  --z-base:       1;
+  --z-sticky-nav: 50;
+  --z-cursor:     100;
+  --z-overlay:    200;
+  --z-modal:      300;
+}
+
+/* Reduced motion: shorten all durations globally, individual components
+   still check prefers-reduced-motion directly for JS-driven effects */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast:   0ms;
+    --dur-base:   0ms;
+    --dur-slow:   0ms;
+    --dur-slower: 0ms;
+  }
+}
