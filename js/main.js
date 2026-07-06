@@ -193,6 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const marqueeTrack = document.getElementById('marquee-track');
   if (marqueeTrack) {
     marqueeTrack.innerHTML += marqueeTrack.innerHTML;
+    marqueeTrack.parentElement.addEventListener('click', () => {
+      marqueeTrack.style.animationPlayState =
+        marqueeTrack.style.animationPlayState === 'paused' ? 'running' : 'paused';
+    });
   }
 
   // ---- FAQ Accordion ----

@@ -164,13 +164,18 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-amber) var(--color-pa
 .roast-timeline { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--content-pad) var(--space-7); position: relative; }
 .roast-progress-track { position: absolute; left: var(--content-pad); right: var(--content-pad); top: 28px; height: 2px; background: var(--border-hairline); }
 .roast-progress-track span { display: block; height: 100%; width: 0%; background: var(--color-amber); transition: width var(--dur-fast) linear; }
-.roast-step { display: grid; grid-template-columns: 56px 1fr; gap: var(--space-3); margin-bottom: var(--space-5); align-items: start; }
+.roast-step {
+  display: grid; grid-template-columns: 56px 1fr; grid-template-areas: "stamp text";
+  gap: var(--space-3); margin-bottom: var(--space-5); align-items: start;
+}
 .roast-stamp {
+  grid-area: stamp;
   width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--color-amber);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-mono); font-weight: var(--fw-medium); color: var(--color-amber);
   background: var(--bg-primary); position: relative; z-index: 1;
 }
+.roast-step-text { grid-area: text; }
 .roast-step h3 { font-size: var(--fs-lg); margin-bottom: 0.3em; }
 .roast-step p { color: var(--text-muted); font-size: var(--fs-sm); }
 
