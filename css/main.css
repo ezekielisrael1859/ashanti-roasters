@@ -218,13 +218,25 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-amber) var(--color-pa
 .sustainability-content h2 { font-size: var(--fs-xl); margin: var(--space-2) 0 var(--space-3); }
 .sustainability-content p:last-child { color: var(--text-muted); }
 
-/* ---- Testimonials Marquee ---- */
-.testimonials { padding: var(--space-6) 0; background: var(--color-espresso); overflow: hidden; }
-.marquee { width: 100%; }
-.marquee-track { display: flex; gap: var(--space-6); width: max-content; animation: marqueeScroll 30s linear infinite; }
-.marquee-item { font-family: var(--font-display); font-style: italic; font-size: var(--fs-lg); color: var(--color-parchment); white-space: nowrap; }
-@keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.testimonials:hover .marquee-track { animation-play-state: paused; }
+/* ---- Testimonials ---- */
+.testimonials { padding: var(--space-6) 0 var(--space-7); background: var(--color-espresso); }
+.testimonials .section-head h2 { color: var(--color-parchment); }
+.testimonials .eyebrow { color: var(--color-amber); }
+.testimonial-grid {
+  max-width: var(--content-max); margin: 0 auto; padding: 0 var(--content-pad);
+  display: grid; gap: var(--space-3); grid-template-columns: 1fr;
+}
+.testimonial-card {
+  border: 1px solid var(--border-hairline-inv); border-radius: var(--radius-md);
+  padding: var(--space-4); color: var(--color-parchment);
+  font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--text-muted-inverse);
+}
+.testimonial-card p {
+  font-family: var(--font-display); font-style: italic; font-size: var(--fs-md);
+  color: var(--color-parchment); margin-bottom: var(--space-2); line-height: var(--lh-snug);
+}
+@media (min-width: 700px) { .testimonial-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .testimonial-grid { grid-template-columns: repeat(4, 1fr); } }
 
 /* ---- Visit / Form ---- */
 .enquiry-form { max-width: 560px; margin: 0 auto; padding: 0 var(--content-pad) var(--space-7); display: flex; flex-direction: column; gap: var(--space-3); }

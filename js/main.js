@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- Scroll Reveal (Intersection Observer) ----
-  const revealTargets = document.querySelectorAll('.origin-card, .roast-step, .blend-card, .accordion-item');
+  const revealTargets = document.querySelectorAll('.origin-card, .roast-step, .blend-card, .accordion-item, .testimonial-card');
   revealTargets.forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(24px)'; });
   if ('IntersectionObserver' in window && !prefersReducedMotion) {
     const io = new IntersectionObserver((entries) => {
@@ -187,16 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const offset = rect.top * 0.15;
       parallaxImg.style.transform = `translateY(${offset}px)`;
     }, { passive: true });
-  }
-
-  // ---- Testimonials Marquee: duplicate track for seamless loop ----
-  const marqueeTrack = document.getElementById('marquee-track');
-  if (marqueeTrack) {
-    marqueeTrack.innerHTML += marqueeTrack.innerHTML;
-    marqueeTrack.parentElement.addEventListener('click', () => {
-      marqueeTrack.style.animationPlayState =
-        marqueeTrack.style.animationPlayState === 'paused' ? 'running' : 'paused';
-    });
   }
 
   // ---- FAQ Accordion ----
